@@ -47,6 +47,23 @@ return [
 ];
 ```
 
+```php
+return [
+    'components' => [
+        'smser' => [
+        'smser' => [
+            // 腾讯云
+            'class' => 'myzero1\smser\QcloudsmsSmser',
+            'appid' => '1400280813', // appid
+            'appkey' => '23e167badfc804d97d454e32e258b781', // 请替换成您的apikey
+            'smsSign' => '玩索得',
+            'expire' => '5',//分钟
+        ],
+        ]
+    ],
+];
+```
+
 OR
 
 ```php
