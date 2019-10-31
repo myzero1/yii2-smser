@@ -1,14 +1,14 @@
 {
-    "name": "daixianceng/yii2-smser",
+    "name": "myzero1/yii2-smser",
     "description": "Yii2 SMS extension",
     "keywords": ["yii2", "extension", "sms", "smser", "plugin"],
-    "homepage": "https://github.com/daixianceng/yii2-smser",
+    "homepage": "https://github.com/myzero1/yii2-smser",
     "type": "yii2-extension",
     "license": "BSD-3-Clause",
     "authors": [
         {
-            "name": "Cosmo",
-            "email": "daixianceng@gmail.com",
+            "name": "Xuanwu Qin",
+            "email": "myzero1@sina.com",
             "role": "Developer"
         }
     ],
@@ -17,7 +17,7 @@
     },
     "autoload": {
         "psr-4": {
-            "daixianceng\\smser\\": "src/"
+            "myzero1\\smser\\": "src/"
         }
     }
 }

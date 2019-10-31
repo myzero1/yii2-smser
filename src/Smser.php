@@ -1,6 +1,6 @@
 <?php
 
-namespace daixianceng\smser;
+namespace myzero1\smser;
 
 use Yii;
 use yii\helpers\FileHelper;
@@ -8,7 +8,7 @@ use yii\helpers\FileHelper;
 /**
  * 短信发送基类
  *
- * @author Cosmo <daixianceng@gmail.com>
+ * @author Myzero1 <myzero1@sina.com>
  */
 abstract class Smser extends \yii\base\Component
 {
