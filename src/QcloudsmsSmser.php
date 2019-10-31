@@ -12,7 +12,7 @@ use Qcloud\Sms\SmsSingleSender;
  * @property string $state read-only state
  * @property string $message read-only message
  */
-class QcloudsmsSmser extends Smser
+class QcloudsmsSmser
 {
     /**
      * @var string
@@ -23,19 +23,27 @@ class QcloudsmsSmser extends Smser
      * @var string
      */
     public $appkey;
+    
+    /**
+     * @var string
+     */
+    public $smsSign;
 
     /**
      * @inheritdoc
      *
      * @param string $mobile 15825368746
      * @param string $content 【腾讯云】您的验证码是: 5678
+     * @param int $templateId   459670
      * @return mixed
      */
-    public function send($mobile, $content)
+    public function send($mobile, $code, $expire, $templateId)
     {
         try {
             $ssender = new SmsSingleSender($this->appid, $this->appkey);
-            $result = $ssender->send(0, "86", $mobile, $content, "", "");
+            $params = [$code, $expire];
+            // $result = $ssender->send(0, "86", $mobile, $content, "", "");
+            $result = $ssender->sendWithParam("86", $mobile, $templateId, $params, $this->smsSign, "", "");  // 签名参数不能为空串
             $rsp = json_decode($result, true);
             
             if ($rsp['result'] === 0) {
