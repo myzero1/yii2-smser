@@ -33,6 +33,11 @@ class QcloudsmsSmser
      * @var string
      */
     public $expire;
+    
+    /**
+     * @var string
+     */
+    public $templateId;
 
     /**
      * @inheritdoc
@@ -42,13 +47,13 @@ class QcloudsmsSmser
      * @param int $templateId   459670
      * @return mixed
      */
-    public function send($mobile, $code, $templateId)
+    public function send($mobile, $code)
     {
         try {
             $ssender = new SmsSingleSender($this->appid, $this->appkey);
             $params = [$code, $this->expire];
             // $result = $ssender->send(0, "86", $mobile, $content, "", "");
-            $result = $ssender->sendWithParam("86", $mobile, $templateId, $params, $this->smsSign, "", "");  // 签名参数不能为空串
+            $result = $ssender->sendWithParam("86", $mobile, $this->templateId, $params, $this->smsSign, "", "");  // 签名参数不能为空串
             $rsp = json_decode($result, true);
             
             if ($rsp['result'] === 0) {
