@@ -17,7 +17,7 @@ class QcloudsmsSmser extends Smser
     /**
      * @var string
      */
-    public $apikey;
+    public $appid;
     
     /**
      * @var string
@@ -36,12 +36,14 @@ class QcloudsmsSmser extends Smser
         try {
             $ssender = new SmsSingleSender($this->appid, $this->appkey);
             $result = $ssender->send(0, "86", $mobile, $content, "", "");
-            $rsp = json_decode($result);
-
-            var_dump($);
-            echo $result;
+            $rsp = json_decode($result, true);
+            
+            if ($rsp['result'] === 0) {
+                return true;
+            } else {
+                return $rsp;
+            }
         } catch(\Exception $e) {
-            echo var_dump($e);
             return $e;
         }
     }
