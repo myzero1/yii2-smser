@@ -11,6 +11,7 @@ Yii2 SMS extension （短信扩展）
 * [云片网络](http://www.yunpian.com/)
 * [云通讯](http://www.yuntongxun.com/)
 * [螺丝帽](http://www.luosimao.com/)
+* [腾讯云](https://cloud.tencent.com/document/product/382)
 
 ## Installation
 
